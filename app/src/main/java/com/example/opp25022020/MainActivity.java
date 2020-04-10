@@ -15,11 +15,13 @@ public class MainActivity extends AppCompatActivity {
         //Object và class
         //Object là một đối tượng, thông tin cụ thể, cá thể có đủ thông tin
         //Class là một đối tượng tượng trưng cho một tập thể, là một kiểu dữ liệu được tạo ra trong một tập thể và để xem tập thể đó có gì giống với nhau
-        Person Luongthanhdat = new Person();
-        Luongthanhdat.name="Luong Thanh Dat";
-        Luongthanhdat.age = 10 ;
-        Log.d("BBB",Luongthanhdat.name + " " + Luongthanhdat.age);
-
+//        Person Luongthanhdat = new Person();
+//        Luongthanhdat.name="Luong Thanh Dat";
+//        Luongthanhdat.age = 10 ;
+//        Log.d("BBB",Luongthanhdat.name + " " + Luongthanhdat.age);
+        Person luongthanhdat = new Person("Luong thanh dat", 20, "quan 10",1234567891, 200);
 
     }
+//    Access modifier
+//    private, defualt, public, protected
 }
