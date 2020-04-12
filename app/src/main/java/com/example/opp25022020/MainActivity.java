@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
 //        Luongthanhdat.age = 10 ;
 //        Log.d("BBB",Luongthanhdat.name + " " + Luongthanhdat.age);
         Person luongthanhdat = new Person("Luong thanh dat", 20, "quan 10",1234567891, 200);
+        luongthanhdat.setName("");
+        Log.d("BBB",luongthanhdat.getName());
+
 
     }
 //    Access modifier
