@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnListenerClick{
 
+    OnListenerClick onListenerClick;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,13 +25,13 @@ public class MainActivity extends AppCompatActivity {
 //        user.showName();
 
         //Phương thức ghi đè
-        Person person = new Person();
-        person.name = "Human 1";
-        person.showName();
-
-        User user = new User();
-        user.name = "Cline 1";
-        user.showName();
+//        Person person = new Person();
+//        person.name = "Human 1";
+//        person.showName();
+//
+//        User user = new User();
+//        user.name = "Cline 1";
+//        user.showName();
 
 
         //+ Tên phương thức giống nhau chỉ khác nhau thân hàm
@@ -36,15 +39,27 @@ public class MainActivity extends AppCompatActivity {
         //Phương thức nạp chồng
 
         //Tính đóng gói
+
         //Tính trừu tượng
         //Tính đa hình
         //Quan hệ has A
-        showToast(R.string.app_name);
+
+        onListenerClick = this;
+
+        Button button =new Button(this);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onListenerClick.OnClick();
+
+            }
+        });
+        button.performClick();
     }
-    public void showToast(String message){
-        Toast.makeText(this , message, Toast.LENGTH_SHORT).show();
-    }
-    public  void showToast(int resID){
-        Toast.makeText(this,getResources().getString(resID),Toast.LENGTH_SHORT).show();
+
+    @Override
+    public void OnClick() {
+        Log.d("BBB","Đã Click");
+
     }
 }
